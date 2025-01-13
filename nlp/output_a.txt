@@ -1,0 +1,127 @@
+Grammar with 126 productions (start state = S[])
+    S[GAP=?f, SEM=<WHQUERY(?vp(?v,?f),?np,?whq(?f))>, VAR=?v] -> WHICH-QUERY[SEM=?whq] TOUR-NP[SEM=?np, VAR=?f] TOUR-VP[SEM=?vp, VAR=?v]
+    S[GAP='t1', SEM=<WHQUERY(?vp(?v,?f,t1),?np,?whq(t1))>, VAR=?v] -> TIME-QUERY[SEM=?whq] TOUR-NP[SEM=?np, VAR=?f] TOUR-VP[SEM=?vp, VAR=?v]
+    S[GAP=?g, SEM=<YESNOQUERY(?vp(?v))>, VAR=?v] -> CAN-QUERY[] LIST-VP[SEM=?vp, VAR=?v]
+    S[GAP=?g, SEM=<TIMEQUERY(?src,?dest,'2:00HR')>, VAR=?v] -> HOW-LONG[] TRAVEL-VP[SEM=?vp] SOURCE-PP[SEM=?src] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<COUNTQUERY(?dest)>, VAR=?v] -> HOW-MANY[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<TRANSQUERY(?dest)>, VAR=?v] -> WHAT-TRANS[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<DATEQUERY(?dest)>, VAR=?v] -> WHAT-DATES[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<LISTQUERY>, VAR=?v] -> CAN-QUERY[] 'list' 'all' 'the' 'tours'
+    TOUR-NP[SEM=<?det(?cnp)>, VAR=?v] -> DET[SEM=?det] TOUR-CNP[SEM=?cnp, VAR=?v]
+    TOUR-NP[SEM=?cnp, VAR=?v] -> TOUR-CNP[SEM=?cnp, VAR=?v]
+    TOUR-CNP[SEM=<(?cnp & ?dest(?v))>, VAR=?v] -> TOUR-CNP[SEM=?cnp, VAR=?v] TOUR-DEST[SEM=?dest]
+    TOUR-CNP[SEM=<?n(?v)>, VAR=?v] -> TOUR-N[SEM=?n, VAR=?v]
+    TOUR-TIME[SEM=<TIME(?v,?time,?date)>, VAR=?v] -> TIME-DATE[SEM=?time]
+    TOUR-TIME[SEM=<TIME(?v,?time,?date)>, VAR=?v] -> P-TIME[SEM=?p] TIME-DATE[SEM=?time]
+    TOUR-VP[SEM=<\r f t.?v(r,f,TIME(t))>, VAR=?r] -> FLIGHT-V[SEM=?v, VAR=?r]
+    TOUR-VP[SEM=<\r f.?v(r,f,?time)>, VAR=?r] -> FLIGHT-V[SEM=?v, VAR=?r] FLIGHT-TIME[SEM=?time]
+    FLIGHT-V[SEM=<\r f t.?v(r,f,t)>, VAR=?r] -> ARRIVE-V[SEM=?v, VAR=?r]
+    FLIGHT-V[SEM=<\r f t.?v(r,f,t)>, VAR=?r] -> DEPARTURE-V[SEM=?v, VAR=?r]
+    ARRIVE-V[SEM=<\r f t.ARRIVE1(r,f,t)>, VAR=<a1>] -> 'arrives'
+    ARRIVE-V[SEM=<\r f t.ARRIVE1(r,f,t)>, VAR=<a1>] -> 'arrive'
+    DEPARTURE-V[SEM=<\r f t.DEPART1(r,f,t)>, VAR=<d1>] -> 'departs'
+    DEPARTURE-V[SEM=<\r f t.DEPART1(r,f,t)>, VAR=<d1>] -> 'depart'
+    CITY-NP[SEM=<NAME(?v,?x)>, VAR=?v] -> CITY-NAME[SEM=?x, VAR=?v] CITY-N[SEM=?n]
+    CITY-NP[SEM=<DET(?x)>, VAR=?v] -> DET[SEM=?det] CITY-N[SEM=?x, VAR=?v]
+    FLIGHT-SOURCE[SEM=<(\f.SOURCE(f)(?y))(?x)>, VAR=?y] -> 'from' CITY-NP[SEM=?x, VAR=?y]
+    FLIGHT-DEST[SEM=<\f.DEST(f,?x)>, VAR=?y] -> 'to' CITY-NP[SEM=?x, VAR=?y]
+    FLIGHT-DEST[SEM=<\f.DEST(f,?x)>, VAR=?y] -> 'for' CITY-NP[SEM=?x, VAR=?y]
+    TIME-QUERY[SEM=<\x.WH(x,WHAT1)>] -> 'What' 'time' 'does'
+    TIME-QUERY[SEM=<\x.WH(x,WHEN1)>] -> 'When' 'does'
+    WHICH-QUERY[SEM=<\x.WH(x,WHICH1)>] -> 'Which'
+    DET[SEM=<THE>] -> 'the'
+    DET[SEM=<ALL>] -> 'all'
+    DET[SEM=<ALL>] -> 'the'
+    FLIGHT-N[SEM=<FLIGHT1>, VAR=<f1>] -> 'flight'
+    FLIGHT-N[SEM=<FLIGHT1>, VAR=<f1>] -> 'flights'
+    P-TIME[SEM=<AT>] -> 'at'
+    P-TIME[SEM=<ON>] -> 'on'
+    P-TIME[SEM=<IN>] -> 'in'
+    CITY-N[SEM=<CITY>, VAR=<c1>] -> 'city'
+    TIME-MOD[SEM=<'7AM'>, VAR=<t1>] -> '7' 'AM'
+    TIME-MOD[SEM=<'7AM'>, VAR=<t1>] -> '7AM'
+    TIME-MOD[SEM=<'8AM'>, VAR=<t1>] -> '8' 'AM'
+    TIME-MOD[SEM=<'8AM'>, VAR=<t1>] -> '8AM'
+    TIME-MOD[SEM=<'9AM'>, VAR=<t1>] -> '9' 'AM'
+    TIME-MOD[SEM=<'9AM'>, VAR=<t1>] -> '9AM'
+    TIME-MOD[SEM=<'10AM'>, VAR=<t1>] -> '10' 'AM'
+    TIME-MOD[SEM=<'10AM'>, VAR=<t1>] -> '10AM'
+    TIME-MOD[SEM=<'12AM'>, VAR=<t1>] -> '12' 'AM'
+    TIME-MOD[SEM=<'12AM'>, VAR=<t1>] -> '12AM'
+    LIST-VP[SEM=<\r.LIST1(r)>, VAR=?r] -> 'list' DET[] TOUR-N[SEM=?n, VAR=?r]
+    CAN-QUERY[] -> 'can' 'you'
+    CAN-QUERY[] -> 'Can' 'you'
+    TOUR-N[SEM=<TOUR1>, VAR=<t1>] -> 'tour'
+    TOUR-N[SEM=<TOUR1>, VAR=<t1>] -> 'tours'
+    DEST-NAME[SEM=<'PhuQuoc'>, VAR=<pq1>] -> 'Phu' 'Quoc'
+    DEST-NAME[SEM=<'PhuQuoc'>, VAR=<pq1>] -> 'Phu_Quoc'
+    DEST-NAME[SEM=<'DaNang'>, VAR=<dn1>] -> 'Da' 'Nang'
+    DEST-NAME[SEM=<'DaNang'>, VAR=<dn1>] -> 'Da_Nang'
+    DEST-NAME[SEM=<'NhaTrang'>, VAR=<nt1>] -> 'Nha' 'Trang'
+    DEST-NAME[SEM=<'NhaTrang'>, VAR=<nt1>] -> 'Nha_Trang'
+    TOUR-NP[SEM=<?det(?cnp)>, VAR=?v] -> DET[SEM=?det] TOUR-CNP[SEM=?cnp, VAR=?v]
+    TOUR-NP[SEM=?cnp, VAR=?v] -> TOUR-CNP[SEM=?cnp, VAR=?v]
+    TOUR-CNP[SEM=<(?cnp & ?dest(?v))>, VAR=?v] -> TOUR-CNP[SEM=?cnp, VAR=?v] TOUR-DEST[SEM=?dest]
+    TOUR-CNP[SEM=<?n(?v)>, VAR=?v] -> TOUR-N[SEM=?n, VAR=?v]
+    TOUR-DEST[SEM=<\t.DEST(t,?x)>, VAR=?y] -> 'to' DEST-NAME[SEM=?x, VAR=?y]
+    TRANS-TYPE[SEM=<AIRPLANE>] -> 'airplane'
+    TRANS-TYPE[SEM=<TRAIN>] -> 'train'
+    TOUR-TIME[SEM=<TIME(?v,?time,?date)>, VAR=?v] -> TIME-DATE[SEM=?time]
+    S[GAP=?g, SEM=<YESNOQUERY(?vp(?v))>, VAR=?v] -> CAN-QUERY[] LIST-VP[SEM=?vp, VAR=?v]
+    S[GAP=?g, SEM=<COUNTQUERY(?dest)>, VAR=?v] -> HOW-MANY[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<TRANSQUERY(?dest)>, VAR=?v] -> WHAT-TRANS[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<DATEQUERY(?dest)>, VAR=?v] -> WHAT-DATES[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    HOW-LONG[SEM=<\x.DURATION(x)>] -> 'How' 'long' 'does' 'it' 'take'
+    HOW-MANY[SEM=<\x.COUNT(x)>] -> 'How' 'many'
+    WHAT-TRANS[SEM=<\x.TRANSPORT(x)>] -> 'What' 'mode' 'of' 'transportation' 'is' 'used' 'for'
+    WHAT-DATES[SEM=<\x.DATES(x)>] -> 'What' 'are' 'the' 'available' 'days' 'for' 'traveling' 'to'
+    TRAVEL-VP[SEM=<\x.TRAVEL(x)>] -> 'to' 'travel'
+    SOURCE-PP[SEM=<?city>] -> 'from' CITY-NAME[SEM=?city]
+    DEST-PP[SEM=<?city>] -> 'to' CITY-NAME[SEM=?city]
+    DEST-PP[SEM=<?city>] -> 'to' DEST-NAME[SEM=?city]
+    CITY-NAME[SEM=<'HCMC'>, VAR=<hcm1>] -> 'Ho' 'Chi' 'Minh' 'City'
+    CITY-NAME[SEM=<'NhaTrang'>, VAR=<nt1>] -> 'Nha' 'Trang'
+    CITY-NAME[SEM=<'DaNang'>, VAR=<dn1>] -> 'Da' 'Nang'
+    CITY-NAME[SEM=<'PhuQuoc'>, VAR=<pq1>] -> 'Phu' 'Quoc'
+    TOUR-CNP[SEM=<(?cnp & ?dest(?v))>, VAR=?v] -> TOUR-CNP[SEM=?cnp, VAR=?v] 'to' DEST-NAME[SEM=?dest]
+    TRANS-TYPE[SEM=<AIRPLANE>] -> 'airplane'
+    TRANS-TYPE[SEM=<AIRPLANE>] -> 'by' 'airplane'
+    TRANS-TYPE[SEM=<TRAIN>] -> 'train'
+    TRANS-TYPE[SEM=<TRAIN>] -> 'by' 'train'
+    DATE-MOD[SEM=<'1/7'>, VAR=<d1>] -> '1/7'
+    DATE-MOD[SEM=<'1/7'>, VAR=<d1>] -> 'July' '1st'
+    DATE-MOD[SEM=<'1/7'>, VAR=<d1>] -> '1' 'July'
+    DATE-MOD[SEM=<'4/7'>, VAR=<d1>] -> '4/7'
+    DATE-MOD[SEM=<'4/7'>, VAR=<d1>] -> 'July' '4th'
+    DATE-MOD[SEM=<'4/7'>, VAR=<d1>] -> '4' 'July'
+    DATE-MOD[SEM=<'5/7'>, VAR=<d1>] -> '5/7'
+    DATE-MOD[SEM=<'5/7'>, VAR=<d1>] -> 'July' '5th'
+    DATE-MOD[SEM=<'5/7'>, VAR=<d1>] -> '5' 'July'
+    TIME-DATE[SEM=<TIME(?v,?time,?date)>, VAR=?v] -> TIME-MOD[SEM=?time, VAR=?v] DATE-MOD[SEM=?date]
+    DURATION-MOD[SEM=<'2:00HR'>, VAR=<d1>] -> '2' 'hours'
+    DURATION-MOD[SEM=<'2:00HR'>, VAR=<d1>] -> '2:00' 'hours'
+    DURATION-MOD[SEM=<'2:00HR'>, VAR=<d1>] -> '2:00HR'
+    DURATION-MOD[SEM=<'5:00HR'>, VAR=<d1>] -> '5' 'hours'
+    DURATION-MOD[SEM=<'5:00HR'>, VAR=<d1>] -> '5:00' 'hours'
+    DURATION-MOD[SEM=<'5:00HR'>, VAR=<d1>] -> '5:00HR'
+    DURATION-QUERY[SEM=<\x.DURATION(?src,?dest,x)>] -> HOW-LONG[] TRAVEL-VP[] SOURCE-PP[SEM=?src] DEST-PP[SEM=?dest]
+    SOURCE-PP[SEM=<\x.SOURCE(x,?city)>] -> 'from' CITY-NAME[SEM=?city]
+    DEST-PP[SEM=<\x.DEST(x,?city)>] -> 'to' CITY-NAME[SEM=?city]
+    DEST-PP[SEM=<\x.DEST(x,?city)>] -> 'to' DEST-NAME[SEM=?city]
+    S[GAP=?g, SEM=<TIMEQUERY('HCMC','NhaTrang','2:00HR')>, VAR=?v] -> HOW-LONG[] TRAVEL-VP[SEM=?vp] SOURCE-PP[SEM=?src] DEST-PP[SEM=?dest]
+    SOURCE-PP[SEM=<'HCMC'>] -> 'from' CITY-NAME[SEM=<'HCMC'>]
+    DEST-PP[SEM=<'NhaTrang'>] -> 'to' CITY-NAME[SEM=<'NhaTrang'>]
+    S[GAP=?g, SEM=<COUNTQUERY(?dest)>, VAR=?v] -> HOW-MANY[] TOUR-N[SEM=?n] 'are' 'there' DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<COUNTQUERY(?dest)>, VAR=?v] -> HOW-MANY[] TOUR-NP[SEM=?np] DEST-PP[SEM=?dest]
+    S[GAP=?g, SEM=<TRANSQUERY('NhaTrang')>, VAR=?v] -> 'What' 'mode' 'of' 'transportation' 'is' 'used' 'for' DET[] DEST-NAME[SEM=<'NhaTrang'>] 'tour'
+    S[GAP=?g, SEM=<TRANSQUERY('PhuQuoc')>, VAR=?v] -> 'What' 'mode' 'of' 'transportation' 'is' 'used' 'for' DET[] DEST-NAME[SEM=<'PhuQuoc'>] 'tour'
+    S[GAP=?g, SEM=<TRANSQUERY('DaNang')>, VAR=?v] -> 'What' 'mode' 'of' 'transportation' 'is' 'used' 'for' DET[] DEST-NAME[SEM=<'DaNang'>] 'tour'
+    DEST-NAME[SEM=<'NhaTrang'>] -> 'Nha' 'Trang'
+    DEST-NAME[SEM=<'PhuQuoc'>] -> 'Phu' 'Quoc'
+    DEST-NAME[SEM=<'DaNang'>] -> 'Da' 'Nang'
+    S[GAP=?g, SEM=<DATEQUERY('NhaTrang')>, VAR=?v] -> 'What' 'are' 'the' 'available' 'days' 'for' 'traveling' 'to' DEST-NAME[SEM=<'NhaTrang'>]
+    S[GAP=?g, SEM=<DATEQUERY('PhuQuoc')>, VAR=?v] -> 'What' 'are' 'the' 'available' 'days' 'for' 'traveling' 'to' DEST-NAME[SEM=<'PhuQuoc'>]
+    S[GAP=?g, SEM=<DATEQUERY('DaNang')>, VAR=?v] -> 'What' 'are' 'the' 'available' 'days' 'for' 'traveling' 'to' DEST-NAME[SEM=<'DaNang'>]
+    DEST-NAME[SEM=<'NhaTrang'>] -> 'Nha' 'Trang'
+    DEST-NAME[SEM=<'PhuQuoc'>] -> 'Phu' 'Quoc'
+    DEST-NAME[SEM=<'DaNang'>] -> 'Da' 'Nang'

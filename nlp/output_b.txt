@@ -1,0 +1,6 @@
+(S[GAP=?g, SEM=<LISTQUERY>, VAR=?v]
+  (CAN-QUERY[] Can you)
+  list
+  all
+  the
+  tours)

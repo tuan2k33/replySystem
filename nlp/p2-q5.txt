@@ -1,0 +1,28 @@
+#5. What mode of transportation is used for the Nha Trang tour?
+
+PS C:\Users\Admin\OneDrive\Desktop\NLP2017_Assignment-master\NLP2017_Assignment-master> & C:/Users/Admin/AppData/Local/Microsoft/WindowsApps/python3.11.exe c:/Users/Admin/OneDrive/Desktop/NLP2017_Assignment-master/NLP2017_Assignment-master/main.py
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Admin\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+-------------Loading grammar---------------------
+Grammar loaded at grammar.fcfg
+-------------Parsed structure-------------
+What mode of transportation is used for the Nha Trang tour?
+(S[GAP=?g, SEM=<TRANSQUERY('NhaTrang')>, VAR=?v]
+  What
+  mode
+  of
+  transportation
+  is
+  used
+  for
+  (DET[] the)
+  (DEST-NAME[SEM=<'NhaTrang'>] Nha Trang)
+  tour)
+-------------Parsed logical form-------------
+TRANSQUERY('NhaTrang')
+-------------Procedure semantics-------------
+(TRANSPORT NhaTrang)
+-------------Retrieved result-------------
+train
+PS C:\Users\Admin\OneDrive\Desktop\NLP2017_Assignment-master\NLP2017_Assignment-master> 

@@ -1,0 +1,29 @@
+#1. Can you list all the tours?
+
+PS C:\Users\Admin\OneDrive\Desktop\NLP2017_Assignment-master\NLP2017_Assignment-master> & C:/Users/Admin/AppData/Local/Microsoft/WindowsApps/python3.11.exe c:/Users/Admin/OneDrive/Desktop/NLP2017_Assignment-master/NLP2017_Assignment-master/main.py
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Admin\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+-------------Loading grammar---------------------
+Grammar loaded at grammar.fcfg
+-------------Parsed structure-------------
+Can you list all the tours?
+(S[GAP=?g, SEM=<LISTQUERY>, VAR=?v]
+  (CAN-QUERY[] Can you)
+  list
+  all
+  the
+  tours)
+-------------Parsed logical form-------------
+LISTQUERY
+-------------Procedure semantics-------------
+(LIST-ALL-TOURS)
+-------------Retrieved result-------------
+(DTIME DN HCMC "7AM 1/7") (ATIME DN DN "9AM 1/7")
+ (DTIME DN HCMC "7AM 4/7") (ATIME DN DN "9AM 4/7")
+ (DTIME NT HCMC "7AM 1/7") (ATIME NT NT "12AM 1/7")
+ (DTIME NT HCMC "7AM 5/7") (ATIME NT NT "12AM 5/7")
+ (DTIME PQ HCMC "7AM 1/7") (ATIME PQ PQ "9AM 1/7")
+ (DTIME PQ HCMC "8AM 5/7") (ATIME PQ PQ "10AM 5/7")
+
+PS C:\Users\Admin\OneDrive\Desktop\NLP2017_Assignment-master\NLP2017_Assignment-master> 
