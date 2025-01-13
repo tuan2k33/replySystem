@@ -1,0 +1,6 @@
+{
+    "call": "hcmut.iaslab.nlp.app.main.main",
+    "question": "What mode of transportation is used for the Nha Trang tour?",
+    "rule_file_name": "grammar.fcfg",
+    "usage": "python -m cli run --json_conf conf/app.json"
+}
