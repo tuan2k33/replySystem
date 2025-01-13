@@ -3,7 +3,7 @@ A reply system about flights' information using natural language parsing techniq
 
 Big thanks to @hoanglehaithanh for the core/reference: https://github.com/hoanglehaithanh/NLP2017_Assignment
 
-##To run the program
+## To run the program
 1. Using ```nlp``` file:
 Open terminal and run: ```$python3 main.py --question [question] --rule_file_name [rule_file_name]```
 Usage: (```--question [question] --rule_file_name [rule_file_name]``` part is optional)
